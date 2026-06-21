@@ -10,9 +10,7 @@ interface Props {
 }
 
 const { title, description, canonicalUrl, ogImage = '/images/og-default.jpg', jsonLd } = Astro.props;
-const siteUrl = 'https://healthaura.in';
-const fullCanonical = canonicalUrl ? `${siteUrl}${canonicalUrl}` : Astro.url.href;
-
+const siteUrl = 'https://www.healthaurapathlab.com';const fullCanonical = canonicalUrl ? `${siteUrl}${canonicalUrl}` : Astro.url.href;
 const baseSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
