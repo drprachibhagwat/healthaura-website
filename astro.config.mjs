@@ -6,7 +6,9 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://healthaurapathlab.com',
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
