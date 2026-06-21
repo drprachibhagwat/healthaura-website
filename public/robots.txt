@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://healthaura.in/sitemap-index.xml
+Sitemap: https://www.healthaurapathlab.com/sitemap-index.xml
