@@ -1,0 +1,37 @@
+---
+import faqData from '../data/faq.json';
+---
+
+<section class="py-16 md:py-20 bg-light" id="faq">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12" data-reveal>
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Frequently asked questions</h2>
+        <p class="section-subtitle mx-auto">
+          Everything you need to know about our testing services, home collection, and reports.
+        </p>
+      </div>
+      <div class="space-y-3" data-reveal>
+        {faqData.map((item, i) => (
+          <details class="group bg-white rounded-xl border border-gray-100 overflow-hidden" open={i === 0}>
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 hover:bg-gray-50 transition-colors">
+              <h3 class="text-[0.938rem] font-600 text-dark pr-4">{item.question}</h3>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-muted flex-shrink-0 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5">
+              <p class="text-muted text-[0.938rem] leading-relaxed">{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+      <div class="text-center mt-8" data-reveal>
+        <p class="text-muted text-sm mb-3">Still have questions?</p>
+        <a href="https://wa.me/917028022588?text=Hi%2C%20I%20have%20a%20question%20about%20HealthAura%20Lab" target="_blank" rel="noopener" class="btn-primary text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Ask on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

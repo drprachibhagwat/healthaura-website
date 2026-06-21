@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Locations from '../components/Locations.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+---
+
+<BaseLayout
+  title="HealthAura Lab Locations — Baner & Ravet, Pune | Directions & Hours"
+  description="Find HealthAura Pathology Laboratory near you in Pune. Two locations: Baner (Tulip Towers, Baner Road) and Ravet (Twin Towers, SB Patil College Road). Open Mon-Sat 8AM-9PM."
+  canonicalUrl="/locations"
+>
+  <Header />
+  <main>
+    <section class="bg-gradient-to-br from-teal-50 via-white to-green-50 py-16 md:py-20">
+      <div class="container">
+        <nav class="text-sm text-muted mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-teal-600 transition-colors">Home</a>
+          <span class="mx-2">›</span>
+          <span class="text-dark font-medium">Locations</span>
+        </nav>
+        <div class="max-w-3xl">
+          <span class="section-label">Find Us</span>
+          <h1 class="section-title text-4xl md:text-5xl">Our labs in Pune</h1>
+          <p class="section-subtitle text-lg">
+            Visit us at either of our two conveniently located laboratories. Both labs offer the same comprehensive test menu, advanced equipment, and expert team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas Served -->
+    <section class="py-10 bg-white border-b border-gray-100">
+      <div class="container">
+        <h2 class="text-sm font-700 text-dark mb-4">Home collection available in:</h2>
+        <div class="flex flex-wrap gap-2">
+          {['Baner', 'Balewadi', 'Ravet', 'Aundh', 'Wakad', 'Hinjewadi', 'Pimple Saudagar', 'Pimple Nilakh', 'Pashan', 'Sus', 'Bavdhan', 'Punawale', 'Nigdi', 'Vishal Nagar', 'Thergaon', 'Chinchwad', 'Pradhikaran'].map(area => (
+            <span class="text-xs bg-teal-50 text-teal-700 px-3 py-1.5 rounded-full font-medium">{area}</span>
+          ))}
+          <span class="text-xs bg-gray-100 text-muted px-3 py-1.5 rounded-full font-medium">& more areas</span>
+        </div>
+      </div>
+    </section>
+
+    <Locations />
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>

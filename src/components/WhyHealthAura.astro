@@ -1,0 +1,64 @@
+---
+const pillars = [
+  {
+    icon: 'cpu',
+    title: 'Advanced Technology',
+    description: 'Fully automated analysers and cutting-edge equipment deliver precise, reliable results you can trust — every single time.',
+    accent: 'from-teal-500 to-teal-600',
+    iconBg: 'bg-teal-500/10 text-teal-600',
+    border: 'border-teal-100 hover:border-teal-300',
+  },
+  {
+    icon: 'shield-check',
+    title: 'Uncompromising Quality',
+    description: 'Stringent internal and external quality control at every step — from sample collection to report generation. Zero room for error.',
+    accent: 'from-green-500 to-green-600',
+    iconBg: 'bg-green-500/10 text-green-600',
+    border: 'border-green-100 hover:border-green-300',
+  },
+  {
+    icon: 'stethoscope',
+    title: 'Expert-Monitored Testing',
+    description: 'Every test, every machine, supervised and validated by MD Pathologists. Your reports are reviewed by doctors, not just technicians.',
+    accent: 'from-teal-500 to-teal-600',
+    iconBg: 'bg-teal-500/10 text-teal-600',
+    border: 'border-teal-100 hover:border-teal-300',
+  },
+  {
+    icon: 'indian-rupee',
+    title: 'Affordable Pricing',
+    description: 'Quality diagnostics accessible to everyone. 10% senior citizen discount, up to 20% for Prime members, and competitive health packages.',
+    accent: 'from-green-500 to-green-600',
+    iconBg: 'bg-green-500/10 text-green-600',
+    border: 'border-green-100 hover:border-green-300',
+  },
+];
+---
+
+<section class="py-20 md:py-24 bg-light" id="why-healthaura">
+  <div class="container">
+    <div class="text-center mb-14" data-reveal>
+      <span class="section-label">Why HealthAura</span>
+      <h2 class="text-3xl md:text-[2.75rem] lg:text-5xl font-800 text-dark leading-[1.1] mb-4">
+        Why HealthAura
+      </h2>
+      <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        Where precision meets care — diagnostics built on science, delivered with empathy
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {pillars.map((pillar, i) => (
+        <div class={`relative bg-white rounded-2xl p-7 border-2 ${pillar.border} shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group overflow-hidden`} data-reveal style={`animation-delay: ${i * 100}ms`}>
+          {/* Top accent bar */}
+          <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.accent} opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+          {/* Icon */}
+          <div class={`w-16 h-16 rounded-2xl ${pillar.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+            <i data-lucide={pillar.icon} class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-lg font-800 text-dark mb-3 tracking-tight">{pillar.title}</h3>
+          <p class="text-muted text-[0.9rem] leading-relaxed">{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

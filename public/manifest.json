@@ -1,0 +1,21 @@
+{
+  "name": "HealthAura Pathology Laboratory",
+  "short_name": "HealthAura",
+  "description": "Dr. Bhagwat's HealthAura Pathology Lab — Trusted diagnostics in Pune",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1D8A9A",
+  "icons": [
+    {
+      "src": "/images/squareLogo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/squareLogo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

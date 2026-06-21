@@ -1,0 +1,45 @@
+---
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20schedule%20a%20home%20sample%20collection';
+const steps = [
+  { icon: 'phone-call', title: 'Book your visit', desc: 'Call, WhatsApp, or book online. Choose a date and time that works for you — morning slots from 7 AM available.' },
+  { icon: 'home', title: 'We come to you', desc: 'Our trained phlebotomist arrives at your doorstep with sterile equipment. Painless, hygienic sample collection in minutes.' },
+  { icon: 'file-check', title: 'Get your reports', desc: 'Receive accurate reports on WhatsApp and email within 24 hours. Free consultation with Dr. Bhagwat to understand results.' },
+];
+---
+
+<section class="py-16 md:py-20 bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 text-white" id="home-collection">
+  <div class="container">
+    <div class="text-center mb-12" data-reveal>
+      <span class="inline-block text-teal-200 text-sm font-700 uppercase tracking-wide mb-2">Home Sample Collection</span>
+      <h2 class="text-3xl md:text-4xl font-700 mb-3">Your lab test. Your home. Your time.</h2>
+      <p class="text-teal-100 text-lg max-w-xl mx-auto">
+        Skip the queue and the commute. Our phlebotomists collect samples from your doorstep across Baner, Ravet, Aundh, Wakad, Hinjewadi, Punawale, Nigdi, Vishal Nagar & more.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      {steps.map((step, i) => (
+        <div class="text-center relative" data-reveal style={`animation-delay: ${i * 150}ms`}>
+          {/* Connector line (desktop) */}
+          {i < 2 && (
+            <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-teal-400/40"></div>
+          )}
+          <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm text-white flex items-center justify-center mx-auto mb-5 relative z-10">
+            <i data-lucide={step.icon} class="w-8 h-8"></i>
+          </div>
+          <div class="text-xs font-700 text-teal-300 uppercase tracking-wide mb-2">Step {i + 1}</div>
+          <h3 class="text-xl font-700 mb-2">{step.title}</h3>
+          <p class="text-teal-100 text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center" data-reveal>
+      <a href={whatsappUrl} target="_blank" rel="noopener" class="btn-whatsapp text-base !py-3 !px-8">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Schedule Home Visit on WhatsApp
+      </a>
+      <p class="text-teal-200 text-sm mt-3">Available 7 days a week · Morning slots from 7 AM</p>
+    </div>
+  </div>
+</section>

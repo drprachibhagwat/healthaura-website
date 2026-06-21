@@ -1,0 +1,158 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  jsonLd?: object | object[];
+}
+
+const { title, description, canonicalUrl, ogImage = '/images/og-default.jpg', jsonLd } = Astro.props;
+const siteUrl = 'https://healthaura.in';
+const fullCanonical = canonicalUrl ? `${siteUrl}${canonicalUrl}` : Astro.url.href;
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Dr. Bhagwat's HealthAura Pathology Laboratory",
+  "alternateName": "HealthAura Pathology Lab",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/squareLogo.jpg`,
+  "image": `${siteUrl}/images/og-default.jpg`,
+  "description": "Leading pathology laboratory in Pune offering 500+ diagnostic tests with home sample collection. Headed by Dr. Prachi Bhagwat (MD Pathology).",
+  "telephone": "+917028022588",
+  "priceRange": "₹₹",
+  "foundingDate": "2014-09",
+  "founder": {
+    "@type": "Person",
+    "name": "Dr. Prachi Bhagwat",
+    "jobTitle": "Founder & Chief Pathologist",
+    "description": "MD Pathology, MBBS - Pathologist with 16+ years of experience"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Tulip Towers, First Floor, Baner Road, Opp Primrose Mall",
+      "addressLocality": "Baner, Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411045",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "103, Twin Towers, SB Patil College Road",
+      "addressLocality": "Ravet, Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "412101",
+      "addressCountry": "IN"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.5596",
+    "longitude": "73.7776"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "08:00",
+      "closes": "14:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "500",
+    "bestRating": "5"
+  },
+  "sameAs": []
+};
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Prachi Bhagwat",
+  "medicalSpecialty": ["Pathology"],
+  "qualification": ["MBBS - Grant Medical College, Mumbai", "MD Pathology - BJ Medical College, Pune"],
+  "worksFor": { "@id": `${siteUrl}/#organization` }
+};
+
+const allSchemas = [baseSchema, physicianSchema];
+if (jsonLd) {
+  if (Array.isArray(jsonLd)) allSchemas.push(...jsonLd);
+  else allSchemas.push(jsonLd);
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={fullCanonical} />
+  <meta name="robots" content="index, follow" />
+  <!-- GEO Meta -->
+  <meta name="geo.region" content="IN-MH" />
+  <meta name="geo.placename" content="Pune, Maharashtra" />
+  <meta name="geo.position" content="18.5596;73.7776" />
+  <meta name="ICBM" content="18.5596, 73.7776" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:url" content={fullCanonical} />
+  <meta property="og:site_name" content="HealthAura Pathology Laboratory" />
+  <meta property="og:locale" content="en_IN" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/images/squareLogo.jpg" />
+  <link rel="apple-touch-icon" href="/images/squareLogo.jpg" />
+  <meta name="msapplication-TileImage" content="/images/squareLogo.jpg" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1D8A9A" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- JSON-LD Schemas -->
+  {allSchemas.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
+<body class="antialiased">
+  <slot />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+      // Scroll reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

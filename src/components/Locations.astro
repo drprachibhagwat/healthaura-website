@@ -1,0 +1,85 @@
+---
+const locations = [
+  {
+    name: 'HealthAura — Baner',
+    address: 'Tulip Towers, First Floor, Baner Road, Opp Primrose Mall, Near Prime Bakery',
+    city: 'Baner, Pune — 411045',
+    phone: '+91 70280 22588',
+    rating: '4.7',
+    reviews: '350+',
+    hours: 'Mon–Sat: 8AM–9PM · Sun: 8AM–2PM',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.5!2d73.777!3d18.559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMzJzMyLjQiTiA3M8KwNDYnMzcuMiJF!5e0!3m2!1sen!2sin!4v1',
+    directionsUrl: 'https://maps.google.com/?q=HealthAura+Pathology+Baner+Pune',
+  },
+  {
+    name: 'HealthAura — Ravet',
+    address: '103, Twin Towers, SB Patil College Road, Near Kotak Bank',
+    city: 'Ravet, Pune — 412101',
+    phone: '+91 70305 55800',
+    rating: '4.8',
+    reviews: '200+',
+    hours: 'Mon–Sat: 8AM–9PM · Sun: 8AM–2PM',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.5!2d73.737!3d18.649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM4JzU2LjQiTiA3M8KwNDQnMTMuMiJF!5e0!3m2!1sen!2sin!4v1',
+    directionsUrl: 'https://maps.google.com/?q=HealthAura+Pathology+Lab+Ravet+Pune',
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-white" id="locations">
+  <div class="container">
+    <div class="text-center mb-12" data-reveal>
+      <span class="section-label">Our Locations</span>
+      <h2 class="section-title">Visit us in Baner or Ravet</h2>
+      <p class="section-subtitle mx-auto">
+        Two conveniently located labs in Pune, equipped with the same high standards and expert staff.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {locations.map((loc, i) => (
+        <div class="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow" data-reveal style={`animation-delay: ${i * 150}ms`}>
+          <!-- Map -->
+          <div class="aspect-[16/9] bg-gray-100 relative">
+            <div class="w-full h-full bg-gradient-to-br from-teal-50 to-gray-100 flex items-center justify-center">
+              <div class="text-center">
+                <i data-lucide="map-pin" class="w-10 h-10 text-teal-300 mx-auto mb-2"></i>
+                <p class="text-teal-400 text-sm font-medium">{loc.name}</p>
+                <p class="text-teal-300 text-xs mt-1">Google Maps embed — replace mapUrl</p>
+              </div>
+            </div>
+            {/* Uncomment once real map embed URLs are ready:
+            <iframe src={loc.mapUrl} class="w-full h-full border-0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title={`Map to ${loc.name}`}></iframe>
+            */}
+          </div>
+          <!-- Info -->
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-700 text-dark">{loc.name}</h3>
+              <div class="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full text-xs font-600">
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                {loc.rating} ({loc.reviews})
+              </div>
+            </div>
+            <div class="space-y-2.5 text-sm text-muted mb-5">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 flex-shrink-0"></i>
+                <span>{loc.address}<br/>{loc.city}</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="phone" class="w-4 h-4 text-teal-500 flex-shrink-0"></i>
+                <a href={`tel:${loc.phone.replace(/\s/g, '')}`} class="hover:text-teal-600 transition-colors">{loc.phone}</a>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="clock" class="w-4 h-4 text-teal-500 flex-shrink-0"></i>
+                <span>{loc.hours}</span>
+              </div>
+            </div>
+            <a href={loc.directionsUrl} target="_blank" rel="noopener" class="btn-secondary w-full justify-center text-sm !py-2.5">
+              <i data-lucide="navigation" class="w-4 h-4"></i>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

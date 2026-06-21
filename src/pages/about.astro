@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import DoctorProfile from '../components/DoctorProfile.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+---
+
+<BaseLayout
+  title="About HealthAura Pathology Lab — Our Story, Mission & Team | Pune"
+  description="Learn about HealthAura Pathology Laboratory, founded in 2014 by Dr. Prachi Bhagwat (MD Pathology). Trusted diagnostics in Baner & Ravet, Pune with 12+ years of excellence."
+  canonicalUrl="/about"
+>
+  <Header />
+  <main>
+    <!-- Breadcrumb + Hero -->
+    <section class="bg-gradient-to-br from-teal-50 via-white to-green-50 py-16 md:py-20">
+      <div class="container">
+        <nav class="text-sm text-muted mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-teal-600 transition-colors">Home</a>
+          <span class="mx-2">›</span>
+          <span class="text-dark font-medium">About Us</span>
+        </nav>
+        <div class="max-w-3xl">
+          <span class="section-label">About HealthAura</span>
+          <h1 class="section-title text-4xl md:text-5xl">Accurate diagnostics. Affordable care. Since 2014.</h1>
+          <p class="section-subtitle text-lg">
+            HealthAura Pathology Laboratory was founded with a single mission — to make expert-led, technology-driven diagnostic services accessible and affordable to every family in Pune.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div data-reveal>
+            <span class="section-label">Our Story</span>
+            <h2 class="section-title">From a vision to Pune's trusted lab</h2>
+            <div class="space-y-4 text-muted leading-relaxed">
+              <p>
+                In September 2014, Dr. Prachi Bhagwat opened the doors of HealthAura Pathology Laboratory on Baner Road, Pune. After earning her MBBS from Grant Medical College, Mumbai and MD in Pathology from BJ Medical College, Pune, and after gaining invaluable clinical experience at Deenanath Mangeshkar Hospital and Mai Mangeshkar Hospital, she saw a gap that needed filling.
+              </p>
+              <p>
+                Quality pathology services were either expensive or impersonal. Dr. Bhagwat envisioned a lab where every report would be as accurate as a top hospital's, every patient would get their results explained by a qualified pathologist, and every family could afford it.
+              </p>
+              <p>
+                Over the past decade, HealthAura has grown from a single lab in Baner to two locations serving thousands of patients. Today, with a team of expert technicians and the latest automated analysers, we continue to deliver on that founding promise — accurate diagnostics, affordable pricing, and personal care.
+              </p>
+            </div>
+          </div>
+          <div
+  class="rounded-2xl overflow-hidden bg-gradient-to-br from-teal-50 to-green-50 aspect-[4/3] p-2"
+  data-reveal
+>
+  <img
+    src="/images/lab-interior.jpg"
+    alt="HealthAura Pathology Laboratory Interior"
+    class="w-full h-full object-cover rounded-xl"
+  />
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-16 md:py-20 bg-light">
+      <div class="container">
+        <div class="text-center mb-12" data-reveal>
+          <span class="section-label">Our Values</span>
+          <h2 class="section-title">What drives us every day</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { icon: 'target', title: 'Our Mission', text: 'To provide accurate, timely, and affordable diagnostic services to every patient — backed by expert pathologist review and the latest technology.' },
+            { icon: 'eye', title: 'Our Vision', text: 'To be Pune\'s most trusted name in pathology — where quality is never compromised and every patient feels cared for, not just tested.' },
+            { icon: 'heart-handshake', title: 'Our Promise', text: 'Every report reviewed by an MD Pathologist. Every result delivered on time. Every patient treated with respect, transparency, and genuine concern.' },
+          ].map((item, i) => (
+            <div class="bg-white rounded-xl p-7 border border-gray-100" data-reveal style={`animation-delay: ${i * 100}ms`}>
+              <div class="w-14 h-14 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5">
+                <i data-lucide={item.icon} class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-lg font-700 text-dark mb-2">{item.title}</h3>
+              <p class="text-muted text-[0.938rem] leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality & Equipment -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container">
+        <div class="text-center mb-12" data-reveal>
+          <span class="section-label">Quality Assurance</span>
+          <h2 class="section-title">Technology & quality control</h2>
+          <p class="section-subtitle mx-auto">Our equipment and processes are designed for one thing — accurate results you can act on with confidence.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icon: 'cpu', title: 'Automated Analysers', desc: 'Fully automated biochemistry and haematology systems for precision and speed.' },
+            { icon: 'shield-check', title: 'Quality Control', desc: 'Daily internal QC and participation in external quality assurance programmes.' },
+            { icon: 'file-check', title: 'Expert Review', desc: 'Every report validated and signed by MD Pathologist before release.' },
+            { icon: 'thermometer', title: 'Cold Chain Integrity', desc: 'Temperature-controlled sample transport maintained for the majority of transit and wherever clinically required.' },
+          ].map((item, i) => (
+            <div class="bg-gray-50 rounded-xl p-6 text-center" data-reveal style={`animation-delay: ${i * 80}ms`}>
+              <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide={item.icon} class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-sm font-700 text-dark mb-1.5">{item.title}</h3>
+              <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <DoctorProfile />
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "basic",
+    "name": "Essential Health Checkup",
+    "tag": "Most Popular",
+    "description": "Ideal for routine annual screening covering blood counts, sugar, and basic organ function.",
+    "testsIncluded": 30,
+    "keyTests": ["CBC", "Fasting Sugar", "HbA1c", "Lipid Profile", "Liver Function", "Kidney Function", "Thyroid (TSH)", "Urine Routine"],
+    "idealFor": "Adults 18-40 years"
+  },
+  {
+    "id": "comprehensive",
+    "name": "Comprehensive Health Checkup",
+    "tag": "Best Value",
+    "description": "In-depth wellness screening with vitamin levels, cardiac markers, and complete organ function panels.",
+    "testsIncluded": 55,
+    "keyTests": ["CBC", "HbA1c", "Lipid Profile", "LFT", "KFT", "Thyroid Profile", "Vitamin D", "Vitamin B12", "Iron Studies", "Uric Acid", "Electrolytes", "Urine Routine"],
+    "idealFor": "Adults 30+ years"
+  },
+  {
+    "id": "womens",
+    "name": "Women's Wellness Package",
+    "tag": "For Her",
+    "description": "Tailored for women's health needs including hormonal evaluation, thyroid, anaemia screening, and calcium levels.",
+    "testsIncluded": 45,
+    "keyTests": ["CBC", "Thyroid Profile", "Iron Studies", "Calcium", "Vitamin D", "Vitamin B12", "LH/FSH", "Prolactin", "Pap Smear", "Urine Routine"],
+    "idealFor": "Women 25+ years"
+  },
+  {
+    "id": "senior",
+    "name": "Senior Citizen Health Package",
+    "tag": "10% Extra Discount",
+    "description": "Comprehensive screening for age-related conditions including diabetes, cardiac risk, kidney health, and bone health.",
+    "testsIncluded": 65,
+    "keyTests": ["CBC", "HbA1c", "Lipid Profile", "LFT", "KFT", "Thyroid Profile", "Vitamin D", "B12", "PSA/CA-125", "Calcium", "Electrolytes", "ECG", "Urine Routine"],
+    "idealFor": "Adults 55+ years"
+  }
+]

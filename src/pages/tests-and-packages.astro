@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import HealthPackages from '../components/HealthPackages.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import tests from '../data/tests.json';
+
+const whatsappBase = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20';
+
+const sectionColors = [
+  { bg: 'bg-red-50', icon: 'bg-red-100 text-red-600', accent: 'border-red-200', tag: 'bg-red-100 text-red-700', hoverBtn: 'hover:bg-red-50' },
+  { bg: 'bg-blue-50', icon: 'bg-blue-100 text-blue-600', accent: 'border-blue-200', tag: 'bg-blue-100 text-blue-700', hoverBtn: 'hover:bg-blue-50' },
+  { bg: 'bg-pink-50', icon: 'bg-pink-100 text-pink-600', accent: 'border-pink-200', tag: 'bg-pink-100 text-pink-700', hoverBtn: 'hover:bg-pink-50' },
+  { bg: 'bg-amber-50', icon: 'bg-amber-100 text-amber-700', accent: 'border-amber-200', tag: 'bg-amber-100 text-amber-700', hoverBtn: 'hover:bg-amber-50' },
+  { bg: 'bg-purple-50', icon: 'bg-purple-100 text-purple-600', accent: 'border-purple-200', tag: 'bg-purple-100 text-purple-700', hoverBtn: 'hover:bg-purple-50' },
+  { bg: 'bg-orange-50', icon: 'bg-orange-100 text-orange-600', accent: 'border-orange-200', tag: 'bg-orange-100 text-orange-700', hoverBtn: 'hover:bg-orange-50' },
+  { bg: 'bg-emerald-50', icon: 'bg-emerald-100 text-emerald-600', accent: 'border-emerald-200', tag: 'bg-emerald-100 text-emerald-700', hoverBtn: 'hover:bg-emerald-50' },
+  { bg: 'bg-cyan-50', icon: 'bg-cyan-100 text-cyan-700', accent: 'border-cyan-200', tag: 'bg-cyan-100 text-cyan-700', hoverBtn: 'hover:bg-cyan-50' },
+  { bg: 'bg-indigo-50', icon: 'bg-indigo-100 text-indigo-600', accent: 'border-indigo-200', tag: 'bg-indigo-100 text-indigo-700', hoverBtn: 'hover:bg-indigo-50' },
+  { bg: 'bg-teal-50', icon: 'bg-teal-100 text-teal-600', accent: 'border-teal-200', tag: 'bg-teal-100 text-teal-700', hoverBtn: 'hover:bg-teal-50' },
+  { bg: 'bg-rose-50', icon: 'bg-rose-100 text-rose-600', accent: 'border-rose-200', tag: 'bg-rose-100 text-rose-700', hoverBtn: 'hover:bg-rose-50' },
+];
+---
+
+<BaseLayout
+  title="Pathology Tests & Health Packages in Pune — HealthAura Lab | Book Blood Test"
+  description="Browse 500+ diagnostic tests and health checkup packages at HealthAura Pathology Lab, Pune. CBC, thyroid, lipid profile, vitamin D, cancer markers & more. Home collection available."
+  canonicalUrl="/tests-and-packages"
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-teal-50 via-white to-green-50 py-16 md:py-20">
+      <div class="container">
+        <nav class="text-sm text-muted mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-teal-600 transition-colors">Home</a>
+          <span class="mx-2">›</span>
+          <span class="text-dark font-medium">Tests & Packages</span>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="section-label">Diagnostic Services</span>
+            <h1 class="text-3xl md:text-[2.75rem] font-800 text-dark leading-[1.1] mb-5">Tests & health packages</h1>
+            <p class="section-subtitle text-lg mb-6">
+              From routine blood tests to specialized cancer screening — browse our complete catalog. All tests supervised by MD Pathologists with reports within 24 hours.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="#packages" class="btn-primary">
+                <i data-lucide="package" class="w-4 h-4"></i>
+                View Packages
+              </a>
+              <a href="https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20book%20a%20test" target="_blank" rel="noopener" class="btn-whatsapp">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Book a Test
+              </a>
+            </div>
+          </div>
+          <!-- Video / Media Provision -->
+          <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-teal-100 to-green-100 aspect-[16/10] flex items-center justify-center shadow-lg" data-reveal>
+            <div class="text-center p-8">
+              <div class="w-20 h-20 rounded-full bg-white/60 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="play" class="w-10 h-10 text-teal-600 ml-1"></i>
+              </div>
+              <p class="text-teal-700 font-600 text-lg">Lab tour video</p>
+              <p class="text-teal-500 text-sm mt-1">Short video placeholder — replace with mp4/embed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Nav -->
+    <section class="bg-white border-b border-gray-100 sticky top-[68px] md:top-[76px] z-20 shadow-sm">
+      <div class="container overflow-x-auto py-1">
+        <div class="flex gap-1.5 py-2.5 min-w-max">
+          {tests.map((cat, i) => {
+            const c = sectionColors[i % sectionColors.length];
+            return (
+              <a href={`#${cat.id}`} class={`px-4 py-2 text-xs font-700 rounded-full transition-all whitespace-nowrap border border-transparent hover:border-teal-200 hover:bg-teal-50 text-muted hover:text-teal-700`}>
+                <i data-lucide={cat.icon} class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5"></i>
+                {cat.name}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Categories Detail -->
+    <section class="py-8 md:py-12 bg-light">
+      <div class="container space-y-8">
+        {tests.map((cat, i) => {
+          const c = sectionColors[i % sectionColors.length];
+          return (
+            <div id={cat.id} class="scroll-mt-36 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-reveal>
+              {/* Category Header */}
+              <div class={`${c.bg} px-7 py-5 border-b ${c.accent}`}>
+                <div class="flex items-center gap-4">
+                  <div class={`w-14 h-14 rounded-2xl ${c.icon} flex items-center justify-center shadow-sm`}>
+                    <i data-lucide={cat.icon} class="w-7 h-7"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h2 class="text-xl font-800 text-dark">{cat.name}</h2>
+                    <p class="text-muted text-sm mt-0.5 max-w-2xl">{cat.description}</p>
+                  </div>
+                  <span class={`hidden sm:inline-flex ${c.tag} text-xs font-700 px-3 py-1.5 rounded-full`}>
+                    {cat.tests.length} tests
+                  </span>
+                </div>
+              </div>
+              {/* Test List */}
+              <div class="p-5 md:p-7">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                  {cat.tests.map(test => (
+                    <a href={`${whatsappBase}${encodeURIComponent(test)}`} target="_blank" rel="noopener"
+                       class={`flex items-center justify-between bg-gray-50 ${c.hoverBtn} rounded-xl px-4 py-3 group transition-all duration-200 border border-transparent hover:border-gray-200 hover:shadow-sm`}>
+                      <div class="flex items-center gap-2.5">
+                        <i data-lucide="circle-check" class="w-4 h-4 text-green-400 group-hover:text-green-500 flex-shrink-0"></i>
+                        <span class="text-sm text-dark font-medium">{test}</span>
+                      </div>
+                      <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 group-hover:text-teal-500 flex-shrink-0 transition-colors"></i>
+                    </a>
+                  ))}
+                </div>
+                <p class="text-xs text-muted mt-4 flex items-center gap-1.5 px-1">
+                  <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                  Individual test pages with pricing, normal range & preparation — coming in Phase 2
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <HealthPackages />
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>

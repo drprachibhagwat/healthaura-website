@@ -1,0 +1,103 @@
+---
+const navLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Tests & Packages', href: '/tests-and-packages' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20HealthAura%20Pathology%20Lab';
+---
+
+<!-- Top Bar -->
+<div class="bg-teal-600 text-white text-sm hidden md:block">
+  <div class="container flex justify-between items-center py-2">
+    <div class="flex items-center gap-6">
+      <a href="tel:+917028022588" class="flex items-center gap-1.5 hover:text-teal-100 transition-colors">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+        +91 70280 22588
+      </a>
+      <a href={whatsappUrl} target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-teal-100 transition-colors">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        WhatsApp Us
+      </a>
+    </div>
+    <div class="flex items-center gap-6">
+      <span class="flex items-center gap-1.5">
+        <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+        Mon–Sat: 8AM–9PM | Sun: 8AM–2PM
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Nav -->
+<header id="main-header" class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 transition-shadow duration-300">
+  <div class="container flex items-center justify-between py-3">
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img src="/images/logo.png" alt="Dr. Bhagwat's HealthAura Pathology Laboratory" class="h-14 md:h-[4.5rem] w-auto" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-[0.938rem] font-medium text-gray-700 hover:text-teal-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all hover:after:w-full">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="tel:+917028022588" class="p-2.5 rounded-lg text-teal-600 hover:bg-teal-50 transition-colors" aria-label="Call us">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+      </a>
+      <a href={whatsappUrl} target="_blank" rel="noopener" class="btn-primary text-sm !py-2.5 !px-5">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+        Book Appointment
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="mobile-toggle" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu" class="w-6 h-6 text-gray-700" id="menu-icon"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white">
+    <nav class="container py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+      {navLinks.map(link => (
+        <a href={link.href} class="py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-teal-50 hover:text-teal-600 transition-colors">
+          {link.label}
+        </a>
+      ))}
+      <hr class="my-2 border-gray-100" />
+      <a href="tel:+917028022588" class="py-3 px-4 rounded-lg text-gray-700 font-medium flex items-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4 text-teal-600"></i>
+        +91 70280 22588
+      </a>
+      <a href={whatsappUrl} target="_blank" rel="noopener" class="btn-primary text-center justify-center mt-2">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+        Book Appointment
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const open = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  // Sticky shadow on scroll
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) header?.classList.add('shadow-md');
+    else header?.classList.remove('shadow-md');
+  });
+</script>

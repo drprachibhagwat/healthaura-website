@@ -1,0 +1,49 @@
+---
+import testimonials from '../data/testimonials.json';
+---
+
+<section class="py-16 md:py-20 bg-light" id="testimonials">
+  <div class="container">
+    <div class="text-center mb-12" data-reveal>
+      <span class="section-label">Patient Reviews</span>
+      <h2 class="section-title">Trusted by thousands in Pune</h2>
+      <p class="section-subtitle mx-auto">
+        Rated 4.7+ on Google across both locations with 500+ verified reviews. Here are some recent experiences.
+      </p>
+    </div>
+    <!-- Phase 2: Replace static reviews with Google Places API / Google Reviews widget -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {testimonials.map((review, i) => (
+        <div class="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-md transition-shadow" data-reveal style={`animation-delay: ${i * 80}ms`}>
+          <!-- Stars -->
+          <div class="flex gap-0.5 mb-3">
+            {Array.from({ length: review.rating }).map(() => (
+              <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+            ))}
+          </div>
+          <!-- Quote -->
+          <p class="text-gray-600 text-[0.938rem] leading-relaxed mb-5">"{review.text}"</p>
+          <!-- Author -->
+          <div class="flex items-center justify-between border-t border-gray-50 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-700 text-sm">
+                {review.name.charAt(0)}
+              </div>
+              <div>
+                <p class="text-sm font-600 text-dark">{review.name}</p>
+                <p class="text-xs text-muted">{review.location}</p>
+              </div>
+            </div>
+            <span class="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded-full font-medium">{review.service}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-8" data-reveal>
+      <a href="https://g.page/healthaura-pathology/review" target="_blank" rel="noopener" class="text-teal-600 font-600 text-sm hover:text-teal-700 inline-flex items-center gap-1.5">
+        Read all reviews on Google
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+</section>

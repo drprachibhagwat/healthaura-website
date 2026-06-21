@@ -1,0 +1,89 @@
+---
+const currentYear = new Date().getFullYear();
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20HealthAura%20Pathology%20Lab';
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <!-- Main Footer -->
+  <div class="container py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div>
+        <img src="/images/logo.png" alt="HealthAura" class="h-12 w-auto mb-4 brightness-0 invert opacity-90" />
+        <p class="text-sm leading-relaxed text-gray-400 mb-5">
+          Pune's trusted pathology laboratory since 2014. Accurate diagnostics, affordable pricing, expert care — led by Dr. Prachi Bhagwat (MD Pathology).
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-teal-600 flex items-center justify-center transition-colors" aria-label="Facebook">
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-teal-600 flex items-center justify-center transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-teal-600 flex items-center justify-center transition-colors" aria-label="YouTube">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-600 text-sm uppercase tracking-wide mb-4">Quick Links</h4>
+        <ul class="space-y-2.5">
+          <li><a href="/about" class="text-sm hover:text-teal-400 transition-colors">About Us</a></li>
+          <li><a href="/tests-and-packages" class="text-sm hover:text-teal-400 transition-colors">Tests & Packages</a></li>
+          <li><a href="/locations" class="text-sm hover:text-teal-400 transition-colors">Our Locations</a></li>
+          <li><a href="/blog" class="text-sm hover:text-teal-400 transition-colors">Health Blog</a></li>
+          <li><a href="/contact" class="text-sm hover:text-teal-400 transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-600 text-sm uppercase tracking-wide mb-4">Popular Tests</h4>
+        <ul class="space-y-2.5">
+          <li><a href="/tests-and-packages#haematology" class="text-sm hover:text-teal-400 transition-colors">Complete Blood Count (CBC)</a></li>
+          <li><a href="/tests-and-packages#thyroid" class="text-sm hover:text-teal-400 transition-colors">Thyroid Profile</a></li>
+          <li><a href="/tests-and-packages#diabetes" class="text-sm hover:text-teal-400 transition-colors">HbA1c & Diabetes</a></li>
+          <li><a href="/tests-and-packages#vitamins" class="text-sm hover:text-teal-400 transition-colors">Vitamin D & B12</a></li>
+          <li><a href="/tests-and-packages#heart" class="text-sm hover:text-teal-400 transition-colors">Lipid Profile</a></li>
+          <li><a href="/tests-and-packages#liver-kidney" class="text-sm hover:text-teal-400 transition-colors">Liver & Kidney Function</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-600 text-sm uppercase tracking-wide mb-4">Contact Us</h4>
+        <div class="space-y-3.5">
+          <a href="tel:+917028022588" class="flex items-center gap-2.5 text-sm hover:text-teal-400 transition-colors">
+            <i data-lucide="phone" class="w-4 h-4 text-teal-500 flex-shrink-0"></i>
+            +91 70280 22588
+          </a>
+          <a href={whatsappUrl} target="_blank" rel="noopener" class="flex items-center gap-2.5 text-sm hover:text-teal-400 transition-colors">
+            <i data-lucide="message-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>
+            WhatsApp Us
+          </a>
+          <div class="flex items-start gap-2.5 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 flex-shrink-0"></i>
+            <span>Baner & Ravet<br/>Pune, Maharashtra</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <i data-lucide="clock" class="w-4 h-4 text-teal-500 flex-shrink-0"></i>
+            <span>Mon–Sat: 8AM–9PM<br/>Sun: 8AM–2PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800">
+    <div class="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-gray-500">© {currentYear} Dr. Bhagwat's HealthAura Pathology Laboratory. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="/privacy" class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="text-xs text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

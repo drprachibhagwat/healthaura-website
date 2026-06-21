@@ -1,0 +1,25 @@
+---
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20HealthAura%20Pathology%20Lab';
+---
+
+<!-- Floating WhatsApp button (all screens) -->
+<a href={whatsappUrl} target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+   aria-label="Chat on WhatsApp">
+  <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
+</a>
+
+<!-- Mobile bottom bar (call + book) -->
+<div class="fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 py-2.5 px-4 flex gap-3 lg:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+  <a href="tel:+917028022588" class="flex-1 btn-secondary text-sm justify-center !py-2.5">
+    <i data-lucide="phone" class="w-4 h-4"></i>
+    Call Now
+  </a>
+  <a href={whatsappUrl} target="_blank" rel="noopener" class="flex-1 btn-primary text-sm justify-center !py-2.5">
+    <i data-lucide="calendar-check" class="w-4 h-4"></i>
+    Book Test
+  </a>
+</div>
+
+<!-- Spacer for mobile bottom bar -->
+<div class="h-16 lg:hidden"></div>

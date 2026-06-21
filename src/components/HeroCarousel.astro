@@ -1,0 +1,131 @@
+---
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20HealthAura%20Pathology%20Lab';
+
+const slides = [
+  {
+    tag: 'Trusted Diagnostics Since 2014',
+    headline: 'Accurate results. Affordable care. Right at your doorstep.',
+    subtext: 'MD Pathologist-led laboratory with 500+ tests, home sample collection, and same-day reports across Baner & Ravet, Pune.',
+    cta: 'Book Appointment',
+    ctaLink: whatsappUrl,
+    bgClass: 'bg-gradient-to-br from-teal-50 via-white to-green-50',
+    mediaSrc: '/images/hero-lab.jpg',
+    mediaType: 'image',
+    mediaAlt: 'HealthAura Pathology Laboratory interior'
+  },
+  {
+    tag: 'International Yoga Day',
+    headline: 'Healthy body starts with knowing your numbers.',
+    subtext: 'This Yoga Day, go beyond fitness. Get a comprehensive health checkup to understand your body from the inside. Special wellness packages available.',
+    cta: 'Explore Health Packages',
+    ctaLink: '/tests-and-packages',
+    bgClass: 'bg-gradient-to-br from-green-50 via-white to-teal-50',
+    mediaSrc: '/images/hero-yoga.jpg',
+    mediaType: 'image',
+    mediaAlt: 'Yoga Day health awareness'
+  },
+  {
+    tag: 'Home Sample Collection',
+    headline: 'Your lab test. Your home. Your time.',
+    subtext: 'Skip the queue. Our trained phlebotomists collect samples from your doorstep — painless, hygienic, and on your schedule. Reports on WhatsApp within 24 hours.',
+    cta: 'Schedule Home Visit',
+    ctaLink: whatsappUrl,
+    bgClass: 'bg-gradient-to-br from-teal-50 via-white to-blue-50',
+    mediaSrc: '/images/hero-home-collection.jpg',
+    mediaType: 'image',
+    mediaAlt: 'Home sample collection service'
+  },
+  {
+    tag: 'Monsoon Health Alert',
+    headline: "Don't let the rains catch you off guard.",
+    subtext: 'Dengue, malaria, and typhoid spike during monsoons. Get tested early with our rapid fever panel. Results in hours, not days.',
+    cta: 'Book Fever Panel',
+    ctaLink: whatsappUrl,
+    bgClass: 'bg-gradient-to-br from-blue-50 via-white to-teal-50',
+    mediaSrc: '/images/hero-monsoon.jpg',
+    mediaType: 'image',
+    mediaAlt: 'Monsoon health checkup'
+  }
+];
+---
+
+<section id="hero" class="relative overflow-hidden">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      {slides.map((slide, i) => (
+        <div class="swiper-slide">
+          <div class={`${slide.bgClass} min-h-[540px] md:min-h-[580px]`}>
+            <div class="container flex flex-col md:flex-row items-center gap-8 md:gap-12 py-16 md:py-20">
+              <!-- Text -->
+              <div class="flex-1 text-center md:text-left max-w-xl">
+                <span class="section-label">{slide.tag}</span>
+                <h1 class="text-3xl md:text-4xl lg:text-[2.75rem] font-800 leading-[1.15] text-dark mt-2 mb-5">
+                  {slide.headline}
+                </h1>
+                <p class="text-muted text-base md:text-lg leading-relaxed mb-8">
+                  {slide.subtext}
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                  <a href={slide.ctaLink} target={slide.ctaLink.startsWith('http') ? '_blank' : undefined} rel={slide.ctaLink.startsWith('http') ? 'noopener' : undefined} class="btn-primary text-base">
+                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                    {slide.cta}
+                  </a>
+                  <a href="tel:+917028022588" class="btn-secondary text-base">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call Now
+                  </a>
+                </div>
+              </div>
+              <!-- Media -->
+              <div class="flex-1 max-w-md md:max-w-lg w-full">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-gray-100">
+                  {slide.mediaType === 'video' ? (
+                    <video src={slide.mediaSrc} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                  ) : (
+                    <img
+  src={slide.mediaSrc}
+  alt={slide.mediaAlt}
+  class="w-full h-full object-cover"
+/>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination !bottom-6"></div>
+  </div>
+</section>
+
+<style>
+  .hero-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #1D8A9A;
+    opacity: 0.3;
+    transition: all 0.3s;
+  }
+  .hero-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 28px;
+    border-radius: 5px;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+
+  new Swiper('.hero-swiper', {
+    modules: [Autoplay, Pagination],
+    loop: true,
+    autoplay: { delay: 6000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    speed: 700,
+  });
+</script>

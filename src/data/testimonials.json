@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Sandeep K.",
+    "location": "Baner, Pune",
+    "rating": 5,
+    "text": "Had an emergency on Sunday and they provided home collection with same-day reports. Lab professionals are very polite and professional. Highly recommend HealthAura for all kinds of lab tests.",
+    "service": "Home Collection"
+  },
+  {
+    "name": "Manish P.",
+    "location": "Balewadi, Pune",
+    "rating": 5,
+    "text": "Very prompt blood sample home collection and quick report delivery. The phlebotomist was punctual and skilled. Will definitely recommend and take their service again.",
+    "service": "Blood Test"
+  },
+  {
+    "name": "Joshi J.",
+    "location": "Baner, Pune",
+    "rating": 5,
+    "text": "Very prompt service. Blood collection on time and reports delivered on time. Good behaviour from the sample collection person and the staff on phone. Overall excellent experience.",
+    "service": "Complete Health Checkup"
+  },
+  {
+    "name": "Priya M.",
+    "location": "Ravet, Pune",
+    "rating": 5,
+    "text": "Home visit was right on time. Results were emailed the same evening and the doctor personally called to explain the report in detail. This helped me make the right decisions about my health.",
+    "service": "Thyroid Profile"
+  },
+  {
+    "name": "Rahul D.",
+    "location": "Wakad, Pune",
+    "rating": 5,
+    "text": "My blood collection was done without any pain, which is very difficult with other labs. Experience was excellent. I can give 5 marks out of 5. Dr. Bhagwat personally explained my reports.",
+    "service": "Lipid Profile"
+  },
+  {
+    "name": "Sneha T.",
+    "location": "Pimple Saudagar, Pune",
+    "rating": 5,
+    "text": "I was in urgent need of reports and Dr. Bhagwat accommodated me even close to closing time. The staff is genuinely caring. HealthAura treats patients like family. Truly grateful.",
+    "service": "Urgent Blood Work"
+  }
+]

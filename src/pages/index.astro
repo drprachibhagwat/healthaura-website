@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import WhyHealthAura from '../components/WhyHealthAura.astro';
+import TestCategories from '../components/TestCategories.astro';
+import HealthPackages from '../components/HealthPackages.astro';
+import DoctorProfile from '../components/DoctorProfile.astro';
+import HomeCollection from '../components/HomeCollection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Locations from '../components/Locations.astro';
+import FAQ from '../components/FAQ.astro';
+import BlogSection from '../components/BlogSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import faqData from '../data/faq.json';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="HealthAura Pathology Lab Pune — Blood Test, Home Collection | Dr. Bhagwat's Lab in Baner & Ravet"
+  description="HealthAura Pathology Laboratory in Baner & Ravet, Pune. 500+ diagnostic tests, home sample collection, MD Pathologist-led reports. Trusted since 2014. Call +91 70280 22588."
+  canonicalUrl="/"
+  jsonLd={faqSchema}
+>
+  <Header />
+  <main>
+    <HeroCarousel />
+    <TrustStrip />
+    <WhyHealthAura />
+    <TestCategories />
+    <HealthPackages />
+    <DoctorProfile />
+    <HomeCollection />
+    <Testimonials />
+    <Locations />
+    <FAQ />
+    <BlogSection />
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>

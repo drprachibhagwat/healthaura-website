@@ -1,0 +1,81 @@
+---
+const whatsappUrl = 'https://wa.me/917028022588?text=Hi%2C%20I%27d%20like%20a%20free%20consultation%20with%20Dr.%20Prachi%20Bhagwat';
+---
+
+<section class="py-16 md:py-20 bg-white" id="doctor">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Photo -->
+      <div class="relative" data-reveal>
+        <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-teal-50 to-green-50 aspect-[4/5] max-w-md mx-auto lg:mx-0 p-2">
+  <img
+    src="/images/dr-prachi.jpg"
+    alt="Dr. Prachi Bhagwat"
+    class="w-full h-full object-cover rounded-xl"
+  />
+</div>
+        <!-- Floating badge -->
+        <div class="absolute -bottom-4 -right-4 md:right-4 bg-white rounded-xl shadow-lg border border-gray-100 p-4 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-lg font-700 text-dark">16+ Years</div>
+            <div class="text-xs text-muted">Clinical Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div data-reveal>
+        <span class="section-label">Meet Our Pathologist</span>
+        <h2 class="section-title">Dr. Prachi Bhagwat</h2>
+        <p class="text-teal-600 font-600 text-lg mb-4">MD Pathology · Pathologist</p>
+
+        <div class="space-y-4 text-muted leading-relaxed mb-8">
+          <p>
+            Dr. Prachi Bhagwat is the founder and chief pathologist at HealthAura Pathology Laboratory. With over 16 years of clinical experience, she leads a team dedicated to delivering accurate, timely, and affordable diagnostic services to the people of Pune.
+          </p>
+          <p>
+            She completed her MBBS from Grant Medical College, Mumbai — one of India's most prestigious medical institutions — followed by her MD in Pathology from BJ Medical College, Pune. Her early career included stints at Deenanath Mangeshkar Hospital and Mai Mangeshkar Hospital, where she honed her expertise in clinical pathology.
+          </p>
+          <p>
+            In September 2014, driven by a vision to make quality diagnostics accessible to the common man, she founded HealthAura Pathology Laboratory in Baner, Pune. Today, the lab serves thousands of patients across two locations with a reputation for precision, personal care, and affordability.
+          </p>
+        </div>
+
+        <!-- Credentials -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+          <div class="flex items-center gap-3 bg-teal-50 rounded-lg px-4 py-3">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-teal-600 flex-shrink-0"></i>
+            <span class="text-sm text-teal-800">MBBS — Grant Medical College, Mumbai</span>
+          </div>
+          <div class="flex items-center gap-3 bg-teal-50 rounded-lg px-4 py-3">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-teal-600 flex-shrink-0"></i>
+            <span class="text-sm text-teal-800">MD Pathology — BJ Medical College, Pune</span>
+          </div>
+          <div class="flex items-center gap-3 bg-green-50 rounded-lg px-4 py-3">
+            <i data-lucide="building-2" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+            <span class="text-sm text-green-800">Deenanath Mangeshkar Hospital</span>
+          </div>
+          <div class="flex items-center gap-3 bg-green-50 rounded-lg px-4 py-3">
+            <i data-lucide="building-2" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+            <span class="text-sm text-green-800">Mai Mangeshkar Hospital</span>
+          </div>
+        </div>
+
+        <!-- Free consultation CTA -->
+        <div class="bg-gradient-to-r from-teal-600 to-teal-700 rounded-xl p-5 flex flex-col sm:flex-row items-center gap-4">
+          <div class="flex-1 text-white">
+            <p class="font-700 text-base">Free pathologist consultation</p>
+            <p class="text-teal-100 text-sm mt-0.5">Get your reports explained by Dr. Bhagwat — at no extra charge.</p>
+          </div>
+          <a href={whatsappUrl} target="_blank" rel="noopener" class="btn-whatsapp !py-2.5 text-sm flex-shrink-0">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Consult Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

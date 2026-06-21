@@ -1,0 +1,79 @@
+[
+  {
+    "id": "haematology",
+    "name": "Haematology",
+    "icon": "droplet",
+    "description": "Complete blood analysis including CBC, ESR, blood grouping, peripheral smear, and coagulation profile.",
+    "tests": ["CBC (Complete Blood Count)", "ESR", "Blood Grouping & Rh Typing", "Peripheral Smear", "Coagulation Profile (PT/INR, APTT)", "Reticulocyte Count", "G6PD Test"]
+  },
+  {
+    "id": "diabetes",
+    "name": "Diabetes & Metabolic",
+    "icon": "activity",
+    "description": "Comprehensive diabetes screening and metabolic health monitoring including fasting sugar, HbA1c, and insulin levels.",
+    "tests": ["Fasting Blood Sugar", "Post Prandial Blood Sugar", "HbA1c (Glycated Haemoglobin)", "Glucose Tolerance Test (GTT)", "Fasting Insulin", "C-Peptide", "Microalbumin"]
+  },
+  {
+    "id": "heart",
+    "name": "Heart & Lipid Health",
+    "icon": "heart-pulse",
+    "description": "Cardiac risk assessment with lipid profile, cardiac markers, and inflammatory markers for heart health monitoring.",
+    "tests": ["Lipid Profile", "Total Cholesterol", "HDL / LDL Cholesterol", "Triglycerides", "hs-CRP", "Homocysteine", "Apolipoprotein A & B", "Troponin I/T"]
+  },
+  {
+    "id": "liver-kidney",
+    "name": "Liver & Kidney Function",
+    "icon": "shield-check",
+    "description": "Organ function assessment through liver and kidney panels, electrolytes, and uric acid testing.",
+    "tests": ["Liver Function Test (LFT)", "Kidney Function Test (KFT/RFT)", "Serum Electrolytes", "Uric Acid", "Serum Protein", "Albumin/Globulin Ratio", "BUN/Creatinine"]
+  },
+  {
+    "id": "thyroid",
+    "name": "Thyroid & Hormones",
+    "icon": "scan",
+    "description": "Thyroid function testing and hormonal evaluation including fertility hormones and pregnancy markers.",
+    "tests": ["T3, T4, TSH", "Free T3 / Free T4", "Anti-TPO Antibodies", "LH / FSH", "Prolactin", "Estradiol", "Testosterone", "Beta HCG"]
+  },
+  {
+    "id": "vitamins",
+    "name": "Vitamins & Nutrition",
+    "icon": "sun",
+    "description": "Nutritional deficiency screening for vitamins, minerals, and essential elements critical for overall health.",
+    "tests": ["Vitamin D (25-OH)", "Vitamin B12", "Iron Studies (Serum Iron, TIBC, Ferritin)", "Serum Calcium", "Folic Acid", "Phosphorus", "Magnesium"]
+  },
+  {
+    "id": "infectious",
+    "name": "Infectious Disease Testing",
+    "icon": "bug",
+    "description": "Rapid and reliable testing for common infectious diseases including dengue, malaria, typhoid, and more.",
+    "tests": ["Dengue NS1 / IgM / IgG", "Malaria Antigen / Smear", "Typhoid (Widal Test)", "HIV I & II", "Hepatitis B (HBsAg)", "Hepatitis C (Anti-HCV)", "TB (Mantoux / IGRA)", "Chikungunya"]
+  },
+  {
+    "id": "urine-stool",
+    "name": "Urine, Stool & Body Fluids",
+    "icon": "test-tube",
+    "description": "Clinical pathology including routine urine and stool examination, semen analysis, and body fluid testing.",
+    "tests": ["Urine Routine & Microscopy", "Urine Culture & Sensitivity", "Stool Routine & Occult Blood", "Semen Analysis", "Body Fluid Analysis (Pleural, Ascitic, CSF)", "24-Hour Urine Protein"]
+  },
+  {
+    "id": "microbiology",
+    "name": "Microbiology & Culture",
+    "icon": "microscope",
+    "description": "Culture and sensitivity testing for bacterial, fungal, and mycobacterial infections with antibiotic guidance.",
+    "tests": ["Blood Culture & Sensitivity", "Urine Culture & Sensitivity", "Pus / Wound Culture", "Sputum Culture & AFB", "Throat Swab Culture", "Fungal Culture", "Stool Culture"]
+  },
+  {
+    "id": "cytology",
+    "name": "Cytology & Histopathology",
+    "icon": "layers",
+    "description": "Tissue and cell analysis including FNAC, Pap smear, and biopsy reporting for accurate diagnosis.",
+    "tests": ["FNAC (Fine Needle Aspiration Cytology)", "Pap Smear", "Biopsy & Histopathology", "Fluid Cytology", "Immunohistochemistry"]
+  },
+  {
+    "id": "cancer-special",
+    "name": "Cancer & Specialized Screening",
+    "icon": "shield-plus",
+    "description": "Tumour marker testing, allergy panels, and autoimmune screening for comprehensive health evaluation.",
+    "tests": ["PSA (Prostate Specific Antigen)", "CA-125", "CEA", "AFP (Alpha Feto Protein)", "CA 19-9", "Allergy Panel (IgE)", "ANA / Anti-dsDNA", "RA Factor / Anti-CCP"]
+  }
+]
