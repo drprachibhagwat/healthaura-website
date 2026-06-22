@@ -31,4 +31,14 @@
     "question": "Do you accept health insurance or corporate tie-ups?",
     "answer": "We work with several corporate health programs and TPA-based insurance panels. Please contact us with your insurance details and we'll confirm coverage. Most routine diagnostics are covered under standard health policies."
   }
+
+,
+{
+  "question": "Which areas in Pune do you serve for home collection?",
+  "answer": "We provide home sample collection across West Pune including Baner, Balewadi, Ravet, Wakad, Hinjewadi, Aundh, Pimple Saudagar, Pimple Nilakh, Punawale, Nigdi, Vishal Nagar, Pashan, Sus, Bavdhan, Thergaon, Chinchwad, and Pradhikaran. Our phlebotomists are available from 7 AM daily."
+},
+{
+  "question": "Is there a pathology lab near Hinjewadi or Wakad?",
+  "answer": "Yes, our Baner branch on Baner Road (Opp Primrose Mall) is just 10-15 minutes from Hinjewadi and Wakad. We also offer home sample collection in both areas. For Punawale and Ravet side, our Ravet branch on SB Patil College Road is the nearest option."
+}
 ]
