@@ -5,6 +5,7 @@ const steps = [
   { icon: 'home', title: 'We come to you', desc: 'Our trained phlebotomist arrives at your doorstep with sterile equipment. Painless, hygienic sample collection in minutes.' },
   { icon: 'file-check', title: 'Get your reports', desc: 'Receive accurate reports on WhatsApp and email within 24 hours. Free consultation with Dr. Bhagwat to understand results.' },
 ];
+const areas = ['Baner', 'Balewadi', 'Ravet', 'Aundh', 'Wakad', 'Hinjewadi', 'Pimple Saudagar', 'Pimple Nilakh', 'Punawale', 'Nigdi', 'Vishal Nagar', 'Pashan', 'Sus', 'Bavdhan', 'Thergaon', 'Chinchwad', 'Pradhikaran'];
 ---
 
 <section class="py-16 md:py-20 bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 text-white" id="home-collection">
@@ -13,7 +14,7 @@ const steps = [
       <span class="inline-block text-teal-200 text-sm font-700 uppercase tracking-wide mb-2">Home Sample Collection</span>
       <h2 class="text-3xl md:text-4xl font-700 mb-3">Your lab test. Your home. Your time.</h2>
       <p class="text-teal-100 text-lg max-w-xl mx-auto">
-        Skip the queue and the commute. Our phlebotomists collect samples from your doorstep across Baner, Ravet, Aundh, Wakad, Hinjewadi, Punawale, Nigdi, Vishal Nagar & more.
+       Skip the queue and the commute. Our phlebotomists collect samples from your doorstep across Baner, Ravet, Aundh, Wakad, Hinjewadi, Punawale, Nigdi, Vishal Nagar & more.
       </p>
     </div>
 
@@ -33,6 +34,17 @@ const steps = [
         </div>
       ))}
     </div>
+<!-- Areas served -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-10" data-reveal>
+      <h3 class="text-sm font-700 text-teal-200 uppercase tracking-wide mb-4 text-center">Areas we cover for home collection</h3>
+      <div class="flex flex-wrap justify-center gap-2">
+        {areas.map(area => (
+          <span class="text-xs bg-white/15 text-white px-3 py-1.5 rounded-full font-medium">{area}</span>
+        ))}
+        <span class="text-xs bg-teal-400/30 text-teal-100 px-3 py-1.5 rounded-full font-medium">& surrounding areas</span>
+      </div>
+    </div>
+
 
     <div class="text-center" data-reveal>
       <a href={whatsappUrl} target="_blank" rel="noopener" class="btn-whatsapp text-base !py-3 !px-8">
